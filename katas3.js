@@ -1,139 +1,201 @@
 const sampleArray = [469, 755, 244, 245, 758, 450, 302, 20, 712, 71, 456, 21, 398, 339, 882, 848, 179, 535, 940, 472];
 
-kata1(25)
-function kata1(limite) {
-    for (let i = 1; i <= limite; i++) {
-        console.log('Kata 1 - De 1 a 25..  ', i);
-    }
-    return kata1;
+function showResults(value){
+    const resultado = document.createElement("p");
+    const text = document.createTextNode ("O Resultado da função é: " + value);
+    resultado.appendChild(text);
+    const buscaDiv = document.getElementById("mostrador");
+    buscaDiv.appendChild(resultado);
 }
 
+//Exibir os números de 1 a 25
+function kata1() {
+    let valor = []
+for (let i = 1; i <= 25; i++) {
+    valor.push(i);
+}
+return valor;
+}
+showResults(kata1());
 
 
-kata2(1)
-function kata2(limite) {
-    for (let i = 25; i >= limite; i--) {
-        console.log('Kata 2 - de 25 a 1..  ', i);
-    }
-    return kata2;
+//Exibir os números de 25 a 1
+function kata2() {
+    let valor = []
+for (let i = 25; i >= 1; i--) {
+    valor.push(i);
+}
+return valor;
 }
 
-kata3(-25)
-function kata3(limite) {
+showResults(kata2());
 
-    for (let i = -1; i >= limite; i--) {
-        console.log('Kata 3 - de -1 a -25..  ', i);
-    }
-    return kata3;
+
+kata3()
+function kata3() {
+    let valor = []
+for (let i = -1; i >= -25; i--) {
+    valor.push(i);
 }
-
-
-kata4(-1)
-function kata4(limite) {
-
-    for (let i = -25; i <= limite; i++) {
-        console.log('Kata 4 - de -25 a -1..  ', i);
-    }
-    return kata4;
+return valor;
 }
+showResults(kata3());
+
+kata4()
+function kata4() {
+    let valor = []
+    for(let i = -25; i <= -1; i++){
+        valor.push(i);
+    }
+    return valor;
+}
+showResults(kata4());
 
 
 //falta concluir ate o menos 25
-kata5(25)
-function kata5(limite) {
-
-    for (let i = -25; i <= limite; i++) {
-        if (i % 2 == 1)
-            console.log('Kata 5 - de 25 a -25..  ', i);
+kata4()
+function kata5() {
+    let valor = []
+    for(let i = 25; i >= -25; i-=2){
+        valor.push(i);
     }
-    return kata5;
+    return valor;
 }
+showResults(kata5());
 
-
-
-kata6(100)
-function kata6(limite) {
-
-    for (let i = 1; i <= limite; i++) {
-        if (i % 3 == 0)
-            console.log('Kata 6 - de 1 a 100 divisivel por 3..  ', i);
+function kata6() {
+    let valor = []
+    for(let i = 3; i <= 100; i+=3){
+        valor.push(i);
     }
-    return kata6;
+    return valor;
 }
+showResults(kata6());
 
-kata7(100)
-function kata7(limite) {
-
-    for (let i = 1; i <= limite; i++) {
-        if (i % 7 == 0)
-            console.log('Kata 7 - de 1 a 100 divisivel por 7..  ', i);
+kata7()
+function kata7() {
+    let valor = []
+    for(let i = 7; i <= 100; i+=7){
+        valor.push(i);
     }
-    return kata7;
+    return valor;
 }
+showResults(kata7());
 
 
-kata8(1)
-function kata8(limite) {
-    //const k7 = document.createElement('div')
-    //console.log(k7)
-    for (let i = 100; i >= limite; i--) {
-        if(i%7==0 && i%3==0)
-       
-        console.log('Kata 8 - de 100 a 1 divisivel por 7 e por 3..  ',i);
-         }
-    return kata8;
-
-}
-
-kata9(100)
-function kata9(limite) {
-    //const k7 = document.createElement('div')
-    //console.log(k7)
-    for (let i = 1; i <= limite; i++) {
-        if(i%2==1 && i%5==0)
-           
-        console.log('Kata 9 - divisivel por 5 e impar ate o 100..  ',i);
+kata8()
+function kata8() {
+    let valor = []
+    for(let i = 100; i >= 3; i--){
+        if( i % 3 === 0 || i % 7 === 0){
+            valor.push(i);
         }
-    return kata9;
     }
-
-function kata1() {
-    const sampleArray = [469, 755, 244, 245, 758, 450, 302, 20, 712, 71, 456, 21, 398, 339, 882, 848, 179, 535, 940, 472];
-    console.log(sampleArray);
+    return valor;
 }
+showResults(kata8());
+
+kata9()
+function kata9() {
+    let valor = []
+    for(let i = 5; i <= 100; i++){
+        if(i % 5 === 0 && i % 10 !== 0){
+            valor.push(i);
+        }
+    }
+    return valor;
+}
+showResults(kata9());
+
+
+function kata10() {
+}
+showResults(sampleArray)
 
 function kata11() {
-    // implemente o código do kata 11 aqui
+    let result = []
+    for(let i = 0; i < sampleArray.length; i++){
+        if(sampleArray[i] % 2 === 0){
+            result.push(sampleArray[i]);
+        }
+    }
+    return result;
 }
+showResults(kata11());
+
 
 function kata12() {
-    // implemente o código do kata 12 aqui
+    let result = []
+    for(let i = 0; i < sampleArray.length; i++){
+        if(sampleArray[i] % 2 !== 0){
+            result.push(sampleArray[i]);
+        }
+    }
+    return result;
 }
+showResults(kata12());
 
 function kata13() {
-    // implemente o código do kata 13 aqui
+    let result = []
+    for(let i = 0; i < sampleArray.length; i++){
+        if(sampleArray[i] % 8 === 0){
+            result.push(sampleArray[i]);
+        }
+    }
+    return result;
 }
+showResults(kata13());
 
 function kata14() {
-    // implemente o código do kata 14 aqui
+    let result = []
+    for(let i = 0; i < sampleArray.length; i++){
+
+        result.push(sampleArray[i]*sampleArray[i]);
+    }
+    return result;
 }
+showResults(kata14());
 
 function kata15() {
-    // implemente o código do kata 15 aqui
+    let result = 0
+    for(let i = 1; i<=20; i++){
+        result += i
+    }
+    return result;
 }
+showResults (kata15());
 
 function kata16() {
-    // implemente o código do kata 16 aqui
+    let result = 0
+    for(i=0;i < sampleArray.length; i++){
+        result += sampleArray[i]
+    }
+    return result;
 }
+showResults (kata16())
 
 function kata17() {
-    // implemente o código do kata 17 aqui
+    let result = sampleArray[0]
+    for (let i=0;i < sampleArray.length; i++) {
+        if (sampleArray[i] < result) {
+            result = sampleArray[i]
+        }
+    }
+    return result;
 }
+showResults(kata17());
 
 function kata18() {
-    // implemente o código do kata 18 aqui
+let result = sampleArray[0];
+for (let i = 0;i < sampleArray.length; i++) {
+    if (sampleArray[i] > result) {
+        result = sampleArray[i]
+    }
 }
-
+return result;
+}
+showResults(kata18());
+    
 /**
  * Daqui em diante são os bônus, por sua conta e risco
  */
